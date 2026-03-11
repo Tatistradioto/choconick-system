@@ -236,7 +236,7 @@ export function SettingsForm({ profile, settings }: { profile: Profile; settings
           <div>
             <h2 className="text-lg font-semibold text-foreground">Template do contrato</h2>
             <p className="text-foreground/70 text-sm mt-0.5">
-              Edite o texto completo do contrato usando variáveis entre chaves, por exemplo {{`{{nomeCliente}}`}}.
+              Edite o texto completo do contrato usando variáveis entre chaves, por exemplo {"{{nomeCliente}}"}.
             </p>
           </div>
           <div className="flex gap-2">
@@ -261,7 +261,7 @@ export function SettingsForm({ profile, settings }: { profile: Profile; settings
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] gap-4">
           <div>
             <label className="block text-sm font-medium text-foreground/90 mb-1">
-              Texto do contrato (usa variáveis {{`{{variavel}}`}})
+              Texto do contrato (usa variáveis {"{{variavel}}"})
             </label>
             <textarea
               value={contractTemplate}
@@ -273,9 +273,9 @@ export function SettingsForm({ profile, settings }: { profile: Profile; settings
             <p className="block text-sm font-medium text-foreground/90 mb-2">Variáveis disponíveis</p>
             <div className="border border-border rounded-lg bg-background/60 max-h-[360px] overflow-y-auto text-sm">
               <ul className="divide-y divide-border">
-                {CONTRACT_VARIABLES_INFO.map((v) => (
+                {CONTRACT_VARIABLES_INFO?.map((v) => (
                   <li key={v.key} className="px-3 py-2">
-                    <p className="font-mono text-xs text-accent mb-0.5">{{`{{${v.key}}}`}}</p>
+                    <p className="font-mono text-xs text-accent mb-0.5">{"{{" + v.key + "}}"}</p>
                     <p className="text-foreground/80 text-xs">{v.description}</p>
                   </li>
                 ))}
