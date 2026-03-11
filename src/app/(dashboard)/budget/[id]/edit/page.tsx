@@ -25,7 +25,7 @@ export default async function EditBudgetPage({
     notFound();
   }
 
-  let calculator_snapshot: EditInitialData["calculator_snapshot"] =
+  let calculator_snapshot: any =
     (event as { calculator_snapshot?: unknown }).calculator_snapshot ?? null;
   if (typeof calculator_snapshot === "string") {
     try {
