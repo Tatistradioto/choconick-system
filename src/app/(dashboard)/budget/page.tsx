@@ -37,7 +37,7 @@ export default async function BudgetListPage() {
             </Link>
           </div>
         ) : (
-          <BudgetListTable events={events as { id: string; budget_number: string | null; clients: { name: string } | null; event_date: string | null; created_at: string | null; guests_count: number; sale_price: number | null; status: string }[]} />
+          <BudgetListTable events={(events as any) ?? []} />
         )}
       </div>
     </div>
