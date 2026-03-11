@@ -37,7 +37,7 @@ export default async function BudgetListPage() {
             </Link>
           </div>
         ) : (
-          <BudgetListTable events={(events as any) ?? []} />
+          <BudgetListTable events={(events as any[]) || []} />
         )}
       </div>
     </div>
