@@ -55,7 +55,7 @@ export default async function AgendaPage({
       <AgendaMonth
         start={start}
         end={end}
-        events={events || []}
+        events={(events as any[]) || []}
       />
     </div>
   );
