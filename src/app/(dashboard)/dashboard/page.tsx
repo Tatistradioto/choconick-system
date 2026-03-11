@@ -104,7 +104,7 @@ export default async function DashboardPage() {
           <p className="text-foreground/60 text-sm">Nenhum evento agendado</p>
         ) : (
           <ul className="space-y-2">
-            {nextEvents.map((evt: { id: string; event_date: string | null; event_time?: string | null; guests_count: number; sale_price: number | null; status: string; clients: { name: string } | null }) => (
+            {nextEvents.map((evt: { id: string; event_date: string | null; event_time?: string | null; guests_count: number; sale_price: number | null; status: string; clients: { name: string | null } | { name: string | null }[] | null }) => (
               <li
                 key={evt.id}
                 className="flex flex-wrap items-center justify-between gap-2 py-2 border-b border-border last:border-0"
